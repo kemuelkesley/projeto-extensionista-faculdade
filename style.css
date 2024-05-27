@@ -23,8 +23,21 @@
     font-size: 16px;
 }
 
+/* pagina sobre nós */
 
+.text {
+    text-align: justify; /* Justifica o texto */
+    margin-top: 30px; /* Aumenta a margem superior */
+    margin-bottom: 20px; /* Ajuste a margem inferior se necessário */
+    font-family: 'Open Sans', sans-serif; /* Define a fonte */
+    font-size: 16px; /* Ajuste o tamanho da fonte */
+}
 
+.imagem-padrao {
+    max-width: 800px;
+    height: auto;
+}
+  
 
 /* paginação */
 
