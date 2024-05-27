@@ -37,6 +37,13 @@
     max-width: 800px;
     height: auto;
 }
+
+.imagem-padrao {
+    width: 100%; /* Ajuste a largura para 100% do contêiner pai */
+    height: auto; /* Ajuste a altura automaticamente */
+    max-width: 800px; /* Defina a largura máxima para a imagem */
+    max-height: 500px; /* Defina a altura máxima para a imagem */
+}
   
 
 /* paginação */
