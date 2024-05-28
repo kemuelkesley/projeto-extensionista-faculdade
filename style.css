@@ -105,3 +105,15 @@ body {
 .color-main {
     background-color: #F2F2F2;
 }
+
+
+/* modal */
+
+/* .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+}
+.modal-lg {
+    max-width: 80%;
+} */
