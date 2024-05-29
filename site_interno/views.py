@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Operacional
 
 
 def index(request):
@@ -6,7 +7,13 @@ def index(request):
 
 
 def operacional(request):
-    return render(request, 'operacional.html')
+    operacional = Operacional.objects.all()
+
+    context = {
+        'operacional': operacional
+    }
+
+    return render(request, 'operacional.html', context)
 
 
 def tecnico(request):

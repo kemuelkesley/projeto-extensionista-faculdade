@@ -16,44 +16,19 @@
 
 	<main>       
 		<section class="container mt-2">
-			<div class="row justify-content-center">
-				<div class="col-md-8 col-lg-6 mb-4">
-					<div class="card h-100 mx-auto">
-						<img src="{% static "img/empresa.jpg" %}" class="card-img-top fixed-size-img" alt="Imagem de Empresa">
-						<div class="card-body">
-							<h5 class="card-title">Título do Card</h5>
-							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
-						</div>
+			<div class="row justify-content-center">				
+				{% for item in operacional %}
+					<div class="col-md-8 col-lg-6 mb-4">
+							<div class="card h-100 mx-auto">
+								<img src="{{ item.image.url }}" class="card-img-top fixed-size-img" alt="Imagem de Empresa">
+								<div class="card-body">
+									<h5 class="card-title">{{ item.title }}</h5>
+									<p class="card-text">{{ item.descripiton }}</p>
+								</div>
+							</div>
 					</div>
-				</div>
-				<div class="col-md-8 col-lg-6 mb-4">
-					<div class="card h-100 mx-auto">
-						<img src="{% static "img/portaria.jpg" %}" class="card-img-top fixed-size-img" alt="Imagem de Portaria">
-						<div class="card-body">
-							<h5 class="card-title">Título do Card</h5>
-							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-8 col-lg-6 mb-4">
-					<div class="card h-100 mx-auto">
-						<img src="{% static "img/frente-condominio.jpeg" %}" class="card-img-top fixed-size-img" alt="Imagem de Condomínio">
-						<div class="card-body">
-							<h5 class="card-title">Título do Card</h5>
-							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-8 col-lg-6 mb-4">
-					<div class="card h-100 mx-auto">
-						<img src="{% static "img/frente-condominio.jpeg" %}" class="card-img-top fixed-size-img" alt="Imagem de Condomínio">
-						<div class="card-body">
-							<h5 class="card-title">Título do Card</h5>
-							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
-						</div>
-					</div>
-				</div>
-			</div>
+				{% endfor %}	
+			</div>	
 		</section>
     </main>
 
