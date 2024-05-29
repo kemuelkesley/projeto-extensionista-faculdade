@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Pagina operacional {% endblock %}
+
+{% block content %}
+	
+	<header class="container">
+		<div class="row">
+		<div class="col-12">
+			<h1 class="text-center mt-5">Operacional</h1>
+			<p class="text-center"></p>
+		</div>
+		</div>
+	</header>    
+
+
+	<main>       
+		<section class="container mt-2">
+			<div class="row justify-content-center">
+				<div class="col-md-8 col-lg-6 mb-4">
+					<div class="card h-100 mx-auto">
+						<img src="{% static "img/empresa.jpg" %}" class="card-img-top fixed-size-img" alt="Imagem de Empresa">
+						<div class="card-body">
+							<h5 class="card-title">Título do Card</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-lg-6 mb-4">
+					<div class="card h-100 mx-auto">
+						<img src="{% static "img/portaria.jpg" %}" class="card-img-top fixed-size-img" alt="Imagem de Portaria">
+						<div class="card-body">
+							<h5 class="card-title">Título do Card</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-lg-6 mb-4">
+					<div class="card h-100 mx-auto">
+						<img src="{% static "img/frente-condominio.jpeg" %}" class="card-img-top fixed-size-img" alt="Imagem de Condomínio">
+						<div class="card-body">
+							<h5 class="card-title">Título do Card</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-lg-6 mb-4">
+					<div class="card h-100 mx-auto">
+						<img src="{% static "img/frente-condominio.jpeg" %}" class="card-img-top fixed-size-img" alt="Imagem de Condomínio">
+						<div class="card-body">
+							<h5 class="card-title">Título do Card</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi explicabo commodi suscipit reiciendis esse minus? Delectus autem iure explicabo atque non, dolor, ex unde ipsa, tenetur ab sed laborum.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    </main>
+
+	 
+	<div class="container mt-3">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Proximo</a></li>
+            </ul>
+        </nav>
+    </div>
+
+{% endblock  %}
+

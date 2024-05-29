@@ -1,11 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Welcome to the django Man.
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Pagina - Inicial {% endblock %}
+
+{% block content %}
+
+	<header class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center mt-5">Atualização PoterSystem</h1>
+				<p class="text-center">Acompanhe nossas Atualizações</p>
+			</div>
+		</div>
+	</header>
+	<main class="">
+		<section class="container">
+			  <div class="container mt-3">
+				<div class="d-flex justify-content-end">
+				  <form class="d-flex" role="search">
+					<input class="form-control me-2" type="search" placeholder="Digite..." aria-label="Search">
+					<button class="btn btn-outline-primary" type="submit">Buscar</button>
+				  </form>
+				</div>
+			  </div>
+	
+			  <div class="accordion mt-3" id="accordionExample">
+				<div class="accordion-item">
+				  <h2 class="accordion-header">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					  <span class="bi bi-calendar3"> <b>Título: </b>Novos Equipamento | Data de públicação - 26/05/2024</span>
+					</button>
+				  </h2>
+				  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+					  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+					</div>
+				  </div>
+				</div>
+				<div class="accordion-item">
+				  <h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					  <span class="bi bi-calendar3"> <b>Título: </b>Novos Equipamento | Data de públicação - 26/05/2024</span>
+					</button>
+				  </h2>
+				  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+					  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+					</div>
+				  </div>
+				</div>
+				<div class="accordion-item">
+				  <h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					  <span class="bi bi-calendar3"> <b>Título: </b>Novos Equipamento | Data de públicação - 26/05/2024</span>
+					</button>
+				  </h2>
+				  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+					  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+					</div>
+				  </div>
+				</div>
+				<div class="accordion-item">
+				  <h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+					  <span class="bi bi-calendar3"> <b>Título: </b>Novos Equipamento | Data de públicação - 26/05/2024</span>
+					</button>
+				  </h2>
+				  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+					  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+					</div>
+				  </div>
+				</div>
+				<div class="accordion-item">
+				  <h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+					  <span class="bi bi-calendar3"> <b>Título: </b>Novos Equipamento | Data de públicação - 26/05/2024</span>
+					</button>
+				  </h2>
+				  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+					  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+					</div>
+				  </div>
+				</div>
+			  </div>
+		</section>  	
+	  </main>
+
+	  
+	<section class="fixed-pagination">
+		<nav aria-label="Page navigation example">
+			<ul class="pagination d-flex justify-content-center mb-0">
+				<li class="page-item">
+					<a class="page-link" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						<span class="sr-only">Anterior</span>
+					</a>
+				</li>
+				<li class="page-item active"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link" href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						<span class="sr-only">Próximo</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</section>
+
+{% endblock %}

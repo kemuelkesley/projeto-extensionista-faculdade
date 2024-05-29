@@ -1,0 +1,146 @@
+.logo {
+   width: 60px;
+   height: 60px;
+}
+
+.header {
+    /* background-color: #0f4696; */
+    background-color: #5068F2;
+}
+
+.nome__logo {
+    font-size: 26px;
+    color: #FFF;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.color-font {
+    color: #FFF;
+}
+
+.font-size {
+    font-size: 16px;
+}
+
+/* pagina sobre nós */
+
+.text {
+    text-align: justify; /* Justifica o texto */
+    margin-top: 30px; /* Aumenta a margem superior */
+    margin-bottom: 20px; /* Ajuste a margem inferior se necessário */
+    font-family: 'Open Sans', sans-serif; /* Define a fonte */
+    font-size: 16px; /* Ajuste o tamanho da fonte */
+}
+
+.imagem-padrao {
+    max-width: 800px;
+    height: auto;
+}
+
+.imagem-padrao {
+    width: 100%; /* Ajuste a largura para 100% do contêiner pai */
+    height: auto; /* Ajuste a altura automaticamente */
+    max-width: 800px; /* Defina a largura máxima para a imagem */
+    max-height: 500px; /* Defina a altura máxima para a imagem */
+}
+  
+
+/* paginação */
+
+.pagination .page-link {
+    border-radius: 50%;
+    color: #5068F2;
+}
+
+.pagination .page-link:hover {
+    background-color: #5068F2;
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #5068F2;
+    border-color: #5068F2;
+    color: #fff;
+}
+
+.pagination .page-link {
+    border: none;
+}
+
+.fixed-pagination {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+
+/* Rodapé */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content {
+    flex: 1;
+}
+.footer {
+    background-color: #5068F2;
+    color: white;
+    padding: 20px 0;
+}
+.footer a {
+    color: white;
+}
+.footer a:hover {
+    color: #d1d1d1;
+    text-decoration: none;
+}
+
+
+.color-main {
+    background-color: #F2F2F2;
+}
+
+
+/* pagina operacional */
+
+.fixed-size-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.fixed-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.color-main {
+    background-color: #f8f9fa;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #343a40;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+
+/* modal */
+
+/* .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+}
+.modal-lg {
+    max-width: 80%;
+} */

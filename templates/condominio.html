@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pagina - Condominio {% endblock %}
+
+
+{% block content %}
+
+    <header class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mt-5">Condomínios</h1>
+                <p class="text-center">Acompanhe nossas Atualizações</p>
+            </div>
+        </div>
+    </header> 
+
+
+    <main class="mt-3">
+		<section class="container">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Nº</th>
+						<th scope="col">Condomino</th>
+						<th scope="col">Titulo</th>
+						<th scope="col">Descrição</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Aldmo Luiz</td>
+						<td>Paredes com defeito</td>
+						<td>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#modal1">
+								Clique aqui <i class="fas fa-info-circle"></i> 
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Dom Adelmo</td>
+						<td>Portaria apresenta problemas</td>
+						<td>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#modal2">
+								Clique aqui <i class="fas fa-info-circle"></i> 
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Bosque</td>
+						<td>Goteiras na recepção</td>
+						<td>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#modal3">
+								Clique aqui <i class="fas fa-info-circle"></i> 
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+
+
+      <!-- Modals -->
+	<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal1Label">Título - Paredes com defeito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{% static "img/empresa.jpg" %}" alt="Imagem de Paredes com defeito" class="img-fluid mb-3">
+                    <p>Descrição detalhada do problema: Paredes com defeito...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal2Label">Título - Portaria apresenta problemas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{% static "img/portaria.jpg" %}" alt="Imagem de Portaria apresenta problemas" class="img-fluid mb-3">
+                    <p>Descrição detalhada do problema: Portaria apresenta problemas...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal3Label">Título - Goteiras na recepção</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{% static "img/frente-condominio.jpeg" %}" alt="Imagem de Goteiras na recepção" class="img-fluid mb-3">
+                    <p>Descrição detalhada do problema: Goteiras na recepção...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="fixed-pagination">
+		<nav aria-label="Page navigation example">
+			<ul class="pagination d-flex justify-content-center mb-0">
+				<li class="page-item">
+					<a class="page-link" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						<span class="sr-only">Anterior</span>
+					</a>
+				</li>
+				<li class="page-item active"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link" href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						<span class="sr-only">Próximo</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+   </section>
+
+
+
+
+{% endblock  %}
