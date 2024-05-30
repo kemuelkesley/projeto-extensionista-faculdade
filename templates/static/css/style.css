@@ -160,6 +160,12 @@ body {
 }
 
 
+small {
+    font-size: 10px;
+}
+
+
+
 /* modal */
 
 /* .modal-dialog-centered {

@@ -11,13 +11,6 @@ class OperacionalAdmin(admin.ModelAdmin):
 
 
 
-class SobreAdmin(admin.ModelAdmin):
-    date_hierarchy = 'created_at'
-    ordering = ('description', 'created_at')   
-    readonly_fields = ('created_at',)
-
-
-
 class TecnicoAdmin(admin.ModelAdmin):
     list_display = ('title',  'description',) 
     ordering = ('title',)
@@ -33,9 +26,20 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 
 
+class CondominoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'condominium_number', 'condominium_name', 'title', 'created_at', 'activate',)
+
+
+
+class SobreAdmin(admin.ModelAdmin):
+    date_hierarchy = 'created_at'
+    ordering = ('description', 'created_at')   
+    readonly_fields = ('created_at',)
+
+
 admin.site.register(Operacional, OperacionalAdmin)
 admin.site.register(Tecnico, TecnicoAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
-admin.site.register(Condominio)
+admin.site.register(Condominio, CondominoAdmin)
 admin.site.register(Sobre, SobreAdmin)
 

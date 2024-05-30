@@ -50,7 +50,7 @@ class Condominio(models.Model):
     description = models.TextField(verbose_name='Descrição',max_length=250)
     image_condominium = models.ImageField(verbose_name='Inserir magem',upload_to='imagens_condominio/')
     activate = models.BooleanField(verbose_name='Ativar', default=True)
-    creaded_at = models.DateTimeField(verbose_name='Data de publicação',auto_now_add=True)
+    created_at = models.DateTimeField(verbose_name='Data de publicação',auto_now_add=True)
 
     class Meta:
         verbose_name_plural = 'Condominio'

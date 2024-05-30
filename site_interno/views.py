@@ -3,7 +3,13 @@ from .models import Operacional, Categoria, Tecnico, Condominio ,Sobre
 
 
 def index(request):
-    return render(request, 'index.html')
+    condominios = Condominio.objects.all()   
+
+    context = {
+        'condominios': condominios,        
+    }
+
+    return render(request, 'index.html', context)
 
 
 def operacional(request):
