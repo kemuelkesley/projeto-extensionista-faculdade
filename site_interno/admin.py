@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Operacional, Sobre
+from . models import Operacional, Tecnico, Categoria, Sobre
 
 
 class OperacionalAdmin(admin.ModelAdmin):
@@ -17,7 +17,24 @@ class SobreAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
 
 
+
+class TecnicoAdmin(admin.ModelAdmin):
+    list_display = ('title',  'description',) 
+    ordering = ('title',)
+   
+
+
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = ('id','title', 'created_at', 'activate')   
+    list_filter = ('title', 'activate', 'created_at')
+    date_hierarchy = 'created_at'
+    ordering = ('title', 'created_at')   
+    readonly_fields = ('created_at',)
+
+
+
 admin.site.register(Operacional, OperacionalAdmin)
 admin.site.register(Sobre, SobreAdmin)
-
+admin.site.register(Tecnico, TecnicoAdmin)
+admin.site.register(Categoria, CategoriaAdmin)
 

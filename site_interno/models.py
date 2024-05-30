@@ -16,9 +16,32 @@ class Operacional(models.Model):
         return self.title 
 
 
-# class Tecnico(models.Model):
-#     pass
 
+class Categoria(models.Model):
+    title = models.CharField(max_length=60, blank=False, null=False)      
+    activate = models.BooleanField(verbose_name='Ativar', default=True)
+    created_at = models.DateTimeField(verbose_name='Data de publicação',auto_now_add=True)
+    
+    class Meta:
+        verbose_name_plural = 'Categoria'
+              
+
+    def __str__(self):
+        return self.title
+
+
+class Tecnico(models.Model):
+    title = models.CharField(max_length=60, blank=False, null=False)
+    description = models.TextField(max_length=300)
+    image_technical = models.ImageField(upload_to='imagens_tecnicos/')
+    category = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
+
+    class Meta:
+        verbose_name_plural = 'Tecnico'
+
+    def __str__(self):
+        return self.title
+            
 
 # class Condominio(models.Model):
 #     pass
