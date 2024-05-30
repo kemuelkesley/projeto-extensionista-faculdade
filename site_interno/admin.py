@@ -18,7 +18,7 @@ class TecnicoAdmin(admin.ModelAdmin):
 
 
 class CategoriaAdmin(admin.ModelAdmin):
-    list_display = ('id','title', 'created_at', 'activate')   
+    list_display = ('title', 'created_at', 'activate')   
     list_filter = ('title', 'activate', 'created_at')
     date_hierarchy = 'created_at'
     ordering = ('title', 'created_at')   
@@ -27,7 +27,7 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 
 class CondominoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'condominium_number', 'condominium_name', 'title', 'created_at', 'activate',)
+    list_display = ('condominium_number', 'condominium_name', 'title', 'created_at', 'activate',)
 
 
 
