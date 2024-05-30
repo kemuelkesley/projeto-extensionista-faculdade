@@ -43,8 +43,20 @@ class Tecnico(models.Model):
         return self.title
             
 
-# class Condominio(models.Model):
-#     pass
+class Condominio(models.Model):
+    condominium_number = models.CharField(verbose_name='Número do Condominio',max_length=100)
+    condominium_name = models.CharField(verbose_name='Nome',max_length=100)
+    title = models.CharField(verbose_name='Titulo',max_length=60)
+    description = models.TextField(verbose_name='Descrição',max_length=250)
+    image_condominium = models.ImageField(verbose_name='Inserir magem',upload_to='imagens_condominio/')
+    activate = models.BooleanField(verbose_name='Ativar', default=True)
+    creaded_at = models.DateTimeField(verbose_name='Data de publicação',auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'Condominio'
+
+    def __str__(self):
+        return self.condominium_name   
 
 
 class Sobre(models.Model):

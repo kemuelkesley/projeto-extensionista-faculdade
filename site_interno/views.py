@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Operacional, Categoria, Tecnico ,Sobre
+from .models import Operacional, Categoria, Tecnico, Condominio ,Sobre
 
 
 def index(request):
@@ -29,7 +29,13 @@ def tecnico(request):
 
 
 def condominio(request):
-    return render(request, 'condominio.html')
+    condominios = Condominio.objects.all()
+
+    context = {
+        'condominios': condominios
+    }
+
+    return render(request, 'condominio.html', context)
 
 
 def sobre(request):

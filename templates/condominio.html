@@ -16,7 +16,7 @@
     </header> 
 
 
-    <main class="mt-3">
+	<main class="mt-3">
 		<section class="container">
 			<table class="table">
 				<thead>
@@ -28,96 +28,43 @@
 					</tr>
 				</thead>
 				<tbody>
+					{% for condominio in condominios %}
 					<tr>
-						<th scope="row">1</th>
-						<td>Aldmo Luiz</td>
-						<td>Paredes com defeito</td>
+						<th scope="row">{{ forloop.counter }}</th>
+						<td>{{ condominio.condominium_name }}</td>
+						<td>{{ condominio.title }}</td>
 						<td>
-							<a href="#" data-bs-toggle="modal" data-bs-target="#modal1">
-								Clique aqui <i class="fas fa-info-circle"></i> 
+							<a href="#" data-bs-toggle="modal" data-bs-target="#modal{{ forloop.counter }}">
+								Clique aqui <i class="fas fa-info-circle"></i>
 							</a>
 						</td>
 					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Dom Adelmo</td>
-						<td>Portaria apresenta problemas</td>
-						<td>
-							<a href="#" data-bs-toggle="modal" data-bs-target="#modal2">
-								Clique aqui <i class="fas fa-info-circle"></i> 
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Bosque</td>
-						<td>Goteiras na recepção</td>
-						<td>
-							<a href="#" data-bs-toggle="modal" data-bs-target="#modal3">
-								Clique aqui <i class="fas fa-info-circle"></i> 
-							</a>
-						</td>
-					</tr>
+					{% endfor %}
 				</tbody>
 			</table>
 		</section>
 	</main>
-
-
-      <!-- Modals -->
-	<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal1Label">Título - Paredes com defeito</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="{% static "img/empresa.jpg" %}" alt="Imagem de Paredes com defeito" class="img-fluid mb-3">
-                    <p>Descrição detalhada do problema: Paredes com defeito...</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal2Label">Título - Portaria apresenta problemas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="{% static "img/portaria.jpg" %}" alt="Imagem de Portaria apresenta problemas" class="img-fluid mb-3">
-                    <p>Descrição detalhada do problema: Portaria apresenta problemas...</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal3Label">Título - Goteiras na recepção</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="{% static "img/frente-condominio.jpeg" %}" alt="Imagem de Goteiras na recepção" class="img-fluid mb-3">
-                    <p>Descrição detalhada do problema: Goteiras na recepção...</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+	
+	<!-- Modals for descriptions -->
+	{% for condominio in condominios %}
+		<div class="modal fade" id="modal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">{{ condominio.title }}</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						{{ condominio.description }}
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+    
 
 
     <section class="fixed-pagination">

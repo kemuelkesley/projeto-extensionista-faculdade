@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Operacional, Tecnico, Categoria, Sobre
+from . models import Operacional, Tecnico, Condominio ,Categoria, Sobre
 
 
 class OperacionalAdmin(admin.ModelAdmin):
@@ -34,7 +34,8 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Operacional, OperacionalAdmin)
-admin.site.register(Sobre, SobreAdmin)
 admin.site.register(Tecnico, TecnicoAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
+admin.site.register(Condominio)
+admin.site.register(Sobre, SobreAdmin)
 
