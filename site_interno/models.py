@@ -2,9 +2,9 @@ from django.db import models
 
 
 class Operacional(models.Model):
-    title = models.CharField(max_length=60, blank=False, null=False)
-    descripiton = models.TextField(max_length=200)
-    image = models.ImageField(upload_to='imagens_operacionais/')
+    title = models.CharField(verbose_name='Titulo',max_length=60, blank=False, null=False)
+    descripiton = models.TextField(verbose_name='Descrição',max_length=200)
+    image = models.ImageField(verbose_name='Inserir Imagem',upload_to='imagens_operacionais/')
     activate = models.BooleanField(verbose_name='Ativar', default=True)
     created_at = models.DateTimeField(verbose_name='Data de publicação',auto_now_add=True)
     
@@ -18,7 +18,7 @@ class Operacional(models.Model):
 
 
 class Categoria(models.Model):
-    title = models.CharField(max_length=60, blank=False, null=False)      
+    title = models.CharField(verbose_name='Titulo',max_length=60, blank=False, null=False)      
     activate = models.BooleanField(verbose_name='Ativar', default=True)
     created_at = models.DateTimeField(verbose_name='Data de publicação',auto_now_add=True)
     
@@ -31,10 +31,10 @@ class Categoria(models.Model):
 
 
 class Tecnico(models.Model):
-    title = models.CharField(max_length=60, blank=False, null=False)
-    description = models.TextField(max_length=300)
-    image_technical = models.ImageField(upload_to='imagens_tecnicos/')
-    category = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
+    title = models.CharField(verbose_name='Titulo',max_length=60, blank=False, null=False)
+    description = models.TextField(verbose_name='Descrição' ,max_length=300)
+    image_technical = models.ImageField(verbose_name='Inserir Imagem',upload_to='imagens_tecnicos/')
+    category = models.ForeignKey(Categoria, verbose_name='Categoria',on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name_plural = 'Tecnico'
@@ -60,8 +60,8 @@ class Condominio(models.Model):
 
 
 class Sobre(models.Model):
-    description = models.TextField(max_length=1000, null=True)
-    image_company = models.ImageField(upload_to='imagens_sobre/')
+    description = models.TextField(verbose_name='Descrição',max_length=1000, null=True)
+    image_company = models.ImageField(verbose_name='Inserir Imagem',upload_to='imagens_sobre/')
     activate = models.BooleanField(verbose_name='Ativar',default=True)
     created_at = models.DateTimeField(verbose_name='Data de publicação',auto_now_add=True)
 
