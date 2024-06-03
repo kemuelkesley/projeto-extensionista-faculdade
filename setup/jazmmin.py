@@ -48,7 +48,7 @@ JAZZMIN_SETTINGS = {
 
         # external url that opens in a new window (Permissions can be added)
         {"name": "Contato", "url": "https://github.com/kemuelkesley", "new_window": True},
-        {"name": "PoterSystem",  "url": "http://127.0.0.1:8000/", "new_window": True},
+        {"name": "PoterSystem",  "url": "http://3.16.154.190:8000/", "new_window": True},
         
         # model admin to link to (Permissions checked against model)
         #{"model": "auth.User"},
