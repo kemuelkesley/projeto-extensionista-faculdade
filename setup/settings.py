@@ -147,3 +147,11 @@ JAZZMIN_UI_TWEAKS = JAZZMIN_UI_TWEAKS
 
 # Alterar o caminho de redirecionamento do logout
 #LOGOUT_REDIRECT_URL = 'login'
+
+# Sessão para deslogar usuario
+
+
+SESSION_COOKIE_AGE = 1200 # 20 minutos
+
+
+SESSION_SAVE_EVERY_REQUEST = True
