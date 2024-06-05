@@ -5,7 +5,8 @@
 
 .header {
     /* background-color: #0f4696; */
-    background-color: #5068F2;
+    /* background-color: #5068F2; */
+    background-color: #15314a;
 }
 
 .nome__logo {
@@ -85,7 +86,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: sans-serif;
+    background-color: #dee5eb;
 }
+
 .content {
     flex: 1;
 }
@@ -165,15 +168,60 @@ small {
     font-size: 10px;
 }
 
-
-
-/* modal */
-
-/* .modal-dialog-centered {
-    display: flex;
-    align-items: center;
-    min-height: calc(100% - 1rem);
+/* .hover-orange:hover {
+    background-color: darkorange; 
 }
-.modal-lg {
-    max-width: 80%;
-} */
+ */
+ 
+
+ .navbar-nav .nav-item .nav-link {
+    position: relative; /* Necessário para o pseudo-elemento */
+    padding-bottom: 5px; /* Espaço para a linha */
+    color: #FFF; /* Cor branca */
+}
+
+/* Efeito de hover para os links de navegação */
+.navbar-nav .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px; /* Altura da linha */
+    background-color: #FF8C00; /* Cor laranja escura */
+    transition: width 0.3s;
+}
+
+/* Expande a linha ao passar o mouse */
+.navbar-nav .nav-item .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Efeito de hover para os itens do dropdown */
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #FF8C00; /* Cor laranja escura */
+    color: #FFF; /* Cor do texto ao passar o mouse */
+}
+
+/* Exibir o dropdown ao passar o mouse */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Remove o pequeno deslocamento */
+}
+
+
+/* Estilizar o ícone de dropdown */
+.nav-item.dropdown .nav-link::after {
+    /* Código Unicode para o ícone de caret */
+    
+  
+    top: 50%;
+    transform: translateY(550%);
+    color: inherit; /* Faz com que a cor do ícone herde a cor do texto */
+    font-size: 0.8em; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+/* Remover o efeito de hover padrão */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #FF8C00; /* Cor laranja escura */
+}
