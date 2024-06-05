@@ -1,8 +1,8 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light header">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="{% static "img/paypal.svg" %}" alt="Logo" class="logo">
+        <a class="navbar-brand" href="{% url "index" %}">
+            <img src="{% static 'img/letra-p-original.png' %}" alt="Logo" class="logo">
             <span class="nome__logo">oterSystem <small>(versão beta 1.0)</small></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,23 +11,23 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto" style="margin-right: 50px;">
                 <li class="nav-item font-size">
-                    <a class="nav-link color-font" href="{% url "index" %}">Inicio</a>
+                    <a class="nav-link" href="{% url 'index' %}">Inicio</a>
                 </li>
                 <li class="nav-item font-size dropdown">
-                    <a class="nav-link color-font dropdown-toggle" href="#" id="navbarDropdownProcedimentos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Procedimento</a>
+                    <a class="nav-link" href="#" id="navbarDropdownProcedimentos"  data-bs-toggle="dropdown" aria-expanded="false">Procedimento</a>
                     <ul class="dropdown-menu color-main" aria-labelledby="navbarDropdownProcedimentos">
-                        <li><a class="dropdown-item" href="{% url "operacional" %}">Operacional</a></li>
-                        <li><a class="dropdown-item" href="{% url "tecnico" %}">Técnico</a></li>
+                        <li><a class="dropdown-item" href="{% url 'operacional' %}">Operacional</a></li>
+                        <li><a class="dropdown-item" href="{% url 'tecnico' %}">Técnico</a></li>
                     </ul>
                 </li>
                 <li class="nav-item font-size">
-                    <a class="nav-link color-font" href="{% url "condominio" %}">Condomínios</a>
+                    <a class="nav-link" href="{% url 'condominio' %}">Condomínios</a>
                 </li>
                 <li class="nav-item font-size">
-                    <a class="nav-link color-font" href="{% url "sobre" %}">Sobre</a>
+                    <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
                 </li>
                 <li class="nav-item font-size">
-                    <a class="nav-link color-font" href="http://3.16.154.190:8000/admin/" target="_blank">Administração</a>
+                    <a class="nav-link" href="http://3.16.154.190:8000/admin/" target="_blank">Administração</a>
                 </li>
             </ul>
         </div>
