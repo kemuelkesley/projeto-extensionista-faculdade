@@ -173,8 +173,9 @@ small {
 }
  */
  
+/* Nagevação  */
 
- .navbar-nav .nav-item .nav-link {
+.navbar-nav .nav-item .nav-link {
     position: relative; /* Necessário para o pseudo-elemento */
     padding-bottom: 5px; /* Espaço para a linha */
     color: #FFF; /* Cor branca */
