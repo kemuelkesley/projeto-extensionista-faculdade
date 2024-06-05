@@ -1,15 +1,27 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from .models import Operacional, Categoria, Tecnico, Condominio ,Sobre
 
 
 def index(request):
-    condominios = Condominio.objects.all()   
+    condominios = Condominio.objects.all()
+    paginator = Paginator(condominios, 5) 
 
-    context = {
-        'condominios': condominios,        
-    }
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
-    return render(request, 'index.html', context)
+    
+    return render(request, "index.html", {"page_obj": page_obj, "condominios": condominios})
+
+
+def listar(request):
+    lista_condominios = Condominio.objects.all()
+    paginator = Paginator(lista_condominios, 5)  # Show 25 contacts per page.
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, "index.html", {"page_obj": page_obj})
+
 
 
 def operacional(request):
@@ -51,3 +63,5 @@ def sobre(request):
         'sobre': sobre
     }
     return render(request, 'sobre.html', context)
+
+
