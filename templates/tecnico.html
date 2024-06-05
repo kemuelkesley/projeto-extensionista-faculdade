@@ -17,7 +17,7 @@
 
 	<main>
 		<section class="container">
-			{% for categoria in categorias %}
+			{% for categoria in page_obj %}
 				<div class="accordion mt-3" id="accordionExample">
 					<div class="accordion-item">
 						<h2 class="accordion-header">
@@ -55,39 +55,39 @@
 	</main>
 	
 	
- 
 	<div class="container mt-3">
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Proximo</a></li>
-            </ul>
-        </nav>
-    </div>
-      <!-- Page navigation -->
-    {% comment %} <section class="fixed-pagination">
-		<nav aria-label="Page navigation example">
-			<ul class="pagination d-flex justify-content-center mb-0">
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Previous">
-						<span aria-hidden="true">&laquo;</span>
-						<span class="sr-only">Anterior</span>
-					</a>
-				</li>
-				<li class="page-item active"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-						<span class="sr-only">Próximo</span>
-					</a>
-				</li>
+		<nav aria-label="Page navigation">
+			<ul class="pagination justify-content-center">
+				{% if page_obj.has_previous %}
+					<li class="page-item">
+						<a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+					</li>
+				{% else %}
+					<li class="page-item disabled">
+						<span class="page-link">Anterior</span>
+					</li>
+				{% endif %}
+	
+				{% for num in page_obj.paginator.page_range %}
+					{% if page_obj.number == num %}
+						<li class="page-item active"><span class="page-link">{{ num }}</span></li>
+					{% else %}
+						<li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+					{% endif %}
+				{% endfor %}
+	
+				{% if page_obj.has_next %}
+					<li class="page-item">
+						<a class="page-link" href="?page={{ page_obj.next_page_number }}">Próximo</a>
+					</li>
+				{% else %}
+					<li class="page-item disabled">
+						<span class="page-link">Próximo</span>
+					</li>
+				{% endif %}
 			</ul>
 		</nav>
-	</section> {% endcomment %}
+	</div>
+	
 
 {% endblock %}
