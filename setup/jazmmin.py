@@ -47,7 +47,7 @@ JAZZMIN_SETTINGS = {
         {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Contato", "url": "https://github.com/kemuelkesley", "new_window": True},
+        #{"name": "Contato", "url": "https://github.com/kemuelkesley", "new_window": True},
         {"name": "PoterSystem",  "url": "http://3.16.154.190:8000/", "new_window": True},
         
         # model admin to link to (Permissions checked against model)
@@ -77,11 +77,14 @@ JAZZMIN_SETTINGS = {
         # },
         
         # {"model": "auth.user"},
-        # {"name": "Sair", "url": "admin:logout"},
-       
-        
+        # {"name": "Sair", "url": "admin:logout"}, 
+        {
+            "name" : "Whatsapp",
+            "url" : "https://wa.me/5582988516305",
+            "new_window" : True, 
+            "icon" : "fab fa-whatsapp"
+        },
     ],
-
     #############
     # Side Menu #
     #############
@@ -100,7 +103,15 @@ JAZZMIN_SETTINGS = {
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     # Ordenar lista de apps e modelos no painel de administração
-    "order_with_respect_to": ["auth", "site_interno"],
+    "order_with_respect_to": [
+        "auth.group",
+        "auth.user",
+        "site_interno.Categoria",
+        "site_interno.Operacional",
+        "site_interno.Tecnico",
+        "site_interno.Condominio",
+        "site_interno.sobre",
+    ],
    
 
 
@@ -155,7 +166,7 @@ JAZZMIN_SETTINGS = {
     "use_google_fonts_cdn": True,
     # Whether to show the UI customizer on the sidebar
     # Esconder menu de customização
-    "show_ui_builder": True,
+    "show_ui_builder": False,
 
     ###############
     # Change view #
@@ -171,5 +182,4 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {"auth.user": "horizontal_tabs", "auth.group": "vertical_tabs",},
     # Add a language dropdown into the admin
     "language_chooser": False,
-
 }

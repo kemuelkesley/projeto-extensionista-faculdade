@@ -4,7 +4,7 @@ from .models import Operacional, Categoria, Tecnico, Condominio ,Sobre
 
 
 def index(request):
-    condominios = Condominio.objects.all()
+    condominios = Condominio.objects.filter(activate=True)
     paginator = Paginator(condominios, 5) 
 
     page_number = request.GET.get("page")
@@ -16,7 +16,7 @@ def index(request):
 
 
 def operacional(request):
-    operacional = Operacional.objects.all()
+    operacional = Operacional.objects.filter(activate=True)
     paginator = Paginator(operacional, 4)
 
     page_number = request.GET.get("page")
@@ -27,8 +27,8 @@ def operacional(request):
 
 
 def tecnico(request):
-    tecnico = Tecnico.objects.all()
-    categorias = Categoria.objects.all()
+    tecnico = Tecnico.objects.filter(activate=True)
+    categorias = Categoria.objects.filter(activate=True)
 
     paginator = Paginator(categorias, 5)
     page_number = request.GET.get("page")
@@ -39,7 +39,7 @@ def tecnico(request):
 
 
 def condominio(request):
-    condominios = Condominio.objects.all()
+    condominios = Condominio.objects.filter(activate=True)
     paginator = Paginator(condominios, 10)
 
     page_number = request.GET.get("page")
@@ -50,7 +50,7 @@ def condominio(request):
 
 
 def sobre(request):
-    sobre = Sobre.objects.all()
+    sobre = Sobre.objects.filter(activate=True)
     
     context = {
         'sobre': sobre
