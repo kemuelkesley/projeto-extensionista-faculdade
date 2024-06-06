@@ -34,6 +34,7 @@ class Tecnico(models.Model):
     title = models.CharField(verbose_name='Titulo',max_length=60, blank=False, null=False)
     description = models.TextField(verbose_name='Descrição' ,max_length=300)
     image_technical = models.ImageField(verbose_name='Inserir Imagem',upload_to='imagens_tecnicos/')
+    activate = models.BooleanField(verbose_name='Ativar', default=True)
     category = models.ForeignKey(Categoria, verbose_name='Categoria',on_delete=models.DO_NOTHING)
 
     class Meta:
