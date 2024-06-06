@@ -8,12 +8,14 @@ class OperacionalAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_at'
     ordering = ('title', 'created_at')   
     readonly_fields = ('created_at',)
+    list_per_page = 8
 
 
 
 class TecnicoAdmin(admin.ModelAdmin):
     list_display = ('title',  'description',) 
     ordering = ('title',)
+    list_per_page = 8
    
 
 
@@ -23,11 +25,13 @@ class CategoriaAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_at'
     ordering = ('title', 'created_at')   
     readonly_fields = ('created_at',)
+    list_per_page = 8
 
 
 
 class CondominoAdmin(admin.ModelAdmin):
     list_display = ('condominium_number', 'condominium_name', 'title', 'created_at', 'activate',)
+    list_per_page = 8
 
 
 
