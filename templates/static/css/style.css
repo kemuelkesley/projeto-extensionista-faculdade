@@ -230,3 +230,7 @@ small {
 .navbar-nav .nav-item .nav-link:hover {
     color: #FF8C00; /* Cor laranja escura */
 }
+
+.search {
+    width: 290px;
+}
