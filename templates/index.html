@@ -24,32 +24,32 @@
                 </div>
             </div>
 
-              <!-- Mensagem de resultados não encontrados -->
-              {% if no_results %}
-                <div class="alert alert-primary mt-3" role="alert">
-                    Nenhum resultado encontrado para <b>"{{ search_value }}"</b>.
-                </div>
-              {% endif %}
+                <!-- Mensagem de resultados não encontrados -->
+                {% if no_results %}
+                    <div class="alert alert-primary mt-3" role="alert">
+                        Nenhum resultado encontrado para <b>"{{ search_value }}"</b>.
+                    </div>
+                {% endif %}
       
-            
-            {% for condominio in page_obj %}
-                <div class="accordion mt-3" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{ forloop.counter }}" aria-expanded="true" aria-controls="collapseOne{{ forloop.counter }}">
-                                <span class="bi bi-calendar3">
-                                    <b>Nº</b>{{ condominio.condominium_number }} | <b>Título: </b>{{ condominio.title }} | <b>Data de Publicação</b> - {{ condominio.created_at|date:"d/m/Y H:i" }} 
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseOne{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>{{ condominio.description }}</p>
+                
+                {% for condominio in page_obj %}
+                    <div class="accordion mt-3" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{ forloop.counter }}" aria-expanded="true" aria-controls="collapseOne{{ forloop.counter }}">
+                                    <span class="bi bi-calendar3">
+                                        <b>Nº</b>{{ condominio.condominium_number }} | <b>Título: </b>{{ condominio.title }} | <b>Data de Publicação</b> - {{ condominio.created_at|date:"d/m/Y H:i" }} 
+                                    </span>
+                                </button>
+                            </h2>
+                            <div id="collapseOne{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>{{ condominio.description }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
         </section>      
     </main>
 

@@ -16,6 +16,22 @@
     </header> 
 
 
+	<section class="container mt-3">
+		<div class="d-flex justify-content-end">
+			<form class="d-flex" role="search" id="search-form" method="GET" action="{% url 'condominio' %}">
+				<input class="form-control me-2 search" name="q" id="search" value="{{search_value}}" type="search" placeholder="Titulo ou Condominio" aria-label="Search">
+				<button class="btn btn-outline-primary" type="submit">Buscar</button>
+			</form>
+		</div>
+		<!-- Mensagem de resultados não encontrados -->
+		{% if no_results %}
+			<div class="alert alert-primary mt-3" role="alert">
+				Nenhum resultado encontrado para <b>"{{ search_value }}"</b>.				
+			</div>
+		{% endif %}
+	</section>
+	
+
 	<main class="mt-3">
 		<section class="container">
 			<table class="table">
@@ -29,17 +45,17 @@
 				</thead>
 				<tbody>
 					{% for condominio in page_obj %}
-					<tr>
-						{% comment %} <th scope="row">{{ forloop.counter }}</th> {% endcomment %}
-						<th scope="row">{{ condominio.condominium_number }}</th>
-						<td>{{ condominio.condominium_name }}</td>
-						<td>{{ condominio.title }}</td>
-						<td>
-							<a href="#" data-bs-toggle="modal" data-bs-target="#modal{{ forloop.counter }}">
-								Clique aqui <i class="fas fa-info-circle"></i>
-							</a>
-						</td>
-					</tr>
+						<tr>
+							{% comment %} <th scope="row">{{ forloop.counter }}</th> {% endcomment %}
+							<th scope="row">{{ condominio.condominium_number }}</th>
+							<td>{{ condominio.condominium_name }}</td>
+							<td>{{ condominio.title }}</td>
+							<td>
+								<a href="#" data-bs-toggle="modal" data-bs-target="#modal{{ forloop.counter }}">
+									Clique aqui <i class="fas fa-info-circle"></i>
+								</a>
+							</td>
+						</tr>
 					{% endfor %}
 				</tbody>
 			</table>
@@ -47,8 +63,7 @@
 	</main>
 
 
-
-	 <!-- Modals -->
+	<!-- Modals -->
 	{% for condominio in condominios %}
 		<div class="modal fade" id="modal{{ forloop.counter }}" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered">
@@ -58,9 +73,15 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body text-center">
-						<img src="{{condominio.image_condominium.url}}" alt="..." class="img-fluid mb-3">
+						{% if condominio.image_condominium %}
+							<!-- Se houver uma imagem postada para o condomínio, exibir a imagem normalmente -->
+							<img src="{{ condominio.image_condominium.url }}" alt="..." class="img-fluid mb-3">
+						{% else %}
+							<!-- Se não houver imagem postada, exibir o Placeholder -->
+							<img src="https://via.placeholder.com/300?text=PoterSystem" alt="Placeholder" class="img-fluid mb-3">
+						{% endif %}
 						<p>
-							{{condominio.description}}
+							{{ condominio.description }}
 						</p>
 					</div>
 					<div class="modal-footer">
@@ -70,6 +91,7 @@
 			</div>
 		</div>
 	{% endfor %}
+
     
 
 	<div class="container mt-3">
