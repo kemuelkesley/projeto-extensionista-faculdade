@@ -34,7 +34,11 @@
 												<div class="card shadow">
 													<div class="card-body d-flex flex-column">
 														<div class="flex-grow-0">
-															<img src="{{ tecnico.image_technical.url }}" class="custom-image card-img-top rounded mb-3" alt="{{ tecnico.name }}" />
+															{% if tecnico.image_technical %}
+																<img src="{{ tecnico.image_technical.url }}" class="custom-image card-img-top rounded mb-3" alt="{{ tecnico.name }}" />
+															{% else %}
+																<img src="https://via.placeholder.com/150?text=PoterSystem" class="custom-image card-img-top rounded mb-3" alt="Placeholder" />
+															{% endif %}
 														</div>
 														<div class="card-title">
 															<h5 class="card-title text-center">{{ tecnico.title }}</h5>
