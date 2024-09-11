@@ -34,7 +34,7 @@ This project was built using the following technologies:
 
 ## Screens
 
-| Create Task                                                                                       | 
+| Project                                                                                      | 
 |----------------------------------------------------------------------------------------------------
 | ![projeto-extensionista](https://github.com/user-attachments/assets/da27ce3c-e826-43d6-95ef-45e2147cea92) |
  
